@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom"
+import Home from "./Home"
 import Style from "./App.css"
 
 
@@ -36,16 +38,26 @@ const App = () => {
   //on submit handler
   const handleSubmit= event => {
     event.preventDefault();
-    console.log("submitted");
+    alert("Order Confirmed");
   }
 
 
   //return for main component function creating form
   return (
+    <Router>
+    <Route path="/" component={App}>
     <div className="App">
       <h1>Lambda Eats</h1>
-      <h2>Build Your Own Pizza🍕</h2>
-      <img src="https://storage.pizzapizza.ca/phx2/ppl_images/category/fr/2x/create_your_own_2.png" alt="picture of pizza" />
+      <ul className="navBar">
+        <li>
+      <Link to="/">Home</Link><br></br>
+      </li>
+      <li>
+      <Link to="/OrderNow">Order Now</Link>
+      </li>
+      </ul>
+      <h2>Build Your Own Pizza<span role="img">🍕</span></h2>
+      <img src="https://storage.pizzapizza.ca/phx2/ppl_images/category/fr/2x/create_your_own_2.png" alt="pizza" />
       <form onSubmit={handleSubmit}>
         {/*pizza size dropdown*/}
         <h2>Choose Your Pizza Size</h2>
@@ -111,6 +123,8 @@ const App = () => {
         <button>Add to Order $17.99</button>
       </form>
     </div>
+    </Route>
+    </Router>
   );
 };
 export default App;
