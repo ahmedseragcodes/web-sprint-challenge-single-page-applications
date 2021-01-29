@@ -59,13 +59,33 @@ const initialDisabled=true;
 
 
   return (
-    <div>
+    <div className="homepage">
       <HomeHeading>
       <h1>Lambda Eats</h1>
-      <
+      <img className="logo" src="https://www.thedailymeal.com/sites/default/files/story/2017/pizza-roll.JPG" alt="pizza" />
+      <ul>
+        <Link to="/">Home</Link>
+        <Link to="/pizza">Order Pizza
+        <Route exact path="/pizza">
+          <OrderForm formValues={formValues} setFormValues={setFormValues} formErrors={formErrors} setFormErrors={setFormErrors} orders={orders} setOrders={setOrders} disabled={disabled} setDisabled={setDisabled} onSubmit={onSubmit} />
+        </Route>
+        </Link>
+      </ul>
+      <img src="https://globalnews.ca/wp-content/uploads/2014/01/nybz106-427_2007_151036_high.jpg?strip=all&resize=696,488" alt="pizza" />
       </HomeHeading>
     </div>
   );
 };
+
+//styled components
+const HomeHeading=styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+justify-content: center;
+font-size: 1.8rem;
+`
+
 export default App;
 

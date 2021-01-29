@@ -6,4 +6,13 @@ select, input {
 
 a, link {
   margin: 1rem;
+  color: white;
+  text-decoration: none;
+}
+.homepage {
+  background-color: #ec4646;
+  color: white;
+}
+.logo {
+  width: 10rem;
 }
