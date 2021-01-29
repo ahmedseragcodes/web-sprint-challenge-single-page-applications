@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import * as yup from "yup";
+import schema from "../validation/schema.js";
 
 export default function OrderForm(props){
 
@@ -66,6 +68,11 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
 
                 <button disabled={disabled}>Submit Order</button>
             </form>
+            <OrderSection>
+                {orders.map(function(orderItem){
+                        return <p>1 {orderItem.pizzaSize}</p>
+                })}
+            </OrderSection>
         </PizzaOrder>
     )
 }
@@ -75,4 +82,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 font-size: 1.8rem;
+`
+
+const OrderSection=styled.div`
+padding: 1rem;
+border: 1rem ridge white;
+border-radius: 1rem;
 `

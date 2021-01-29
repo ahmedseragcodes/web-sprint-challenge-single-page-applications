@@ -4,7 +4,8 @@ import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import OrderForm from "../src/Components/orderform";
-
+import * as yup from "yup";
+import schema from "./validation/schema.js";
 
 
 
@@ -57,6 +58,12 @@ const initialDisabled=true;
 
   }
 
+
+useEffect(function(){
+  schema.isValid(formValues).then(function(valid){
+    setDisabled(!valid)
+  })
+},[formValues])
 
   return (
     <div className="homepage">
