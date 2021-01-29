@@ -56,6 +56,15 @@ const initialDisabled=true;
     setOrders([...orders, newOrder]);
     setFormValues(initialFormValues);
 
+    axios.post("https://reqres.in/api/users", newOrder)
+    .then(function(res){
+      setOrders([...orders, res.data]);
+      setFormValues(initialFormValues);
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+
   }
 
 
