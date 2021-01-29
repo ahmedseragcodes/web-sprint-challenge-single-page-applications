@@ -1,1 +1,9 @@
 /* GENERAL STYLING WITHIN INDEX CSS */
+
+select, input {
+  margin: 1rem;
+}
+
+a, link {
+  margin: 1rem;
+}
