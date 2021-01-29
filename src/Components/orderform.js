@@ -11,6 +11,22 @@ export default function OrderForm(props){
 const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders, disabled, setDisabled, onSubmit }=props;
 
     const onChange=function(event){
+        //COMMENTING OUT YUP VALIDATION FOR NOW
+        // yup
+        // .reach(schema, event.target.name)
+        // .validate(event.target.value)
+        // .then(function(){
+        //     setFormErrors({
+        //         ...formErrors,
+        //         [event.target.name]: "",
+        //     })
+        // })
+        // .catch(function(err){
+        //     setFormErrors({
+        //         ...formErrors,
+        //         [event.target.name]: err.formErrors[0],
+        //     })
+        // })
 
         const { name, value, type, checked }=event.target;
 
@@ -22,6 +38,9 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
 
     return (
         <PizzaOrder>
+            <div className="errors">
+                <div>{formErrors.pizzaSize}</div>
+            </div>
             <form onSubmit={onSubmit}>
                 
                 <label htmlFor="pizzaSize">Pizza Size:
@@ -35,10 +54,10 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
 
             
                 <label htmlFor="pizzaSauce">Original Sauce 
-                    <input name="pizzaSauce" value="a" checked={formValues.pizzaSauce==="a"} type="radio" onChange={onChange} /> 
+                    <input name="pizzaSauce" value="Original" checked={formValues.pizzaSauce==="Original"} type="radio" onChange={onChange} /> 
                 </label>
                 <label htmlFor="pizzaSauce">Garlic Sauce 
-                    <input name="pizzaSauce" value="b" checked={formValues.pizzaSauce==="b"} type="radio" onChange={onChange} />
+                    <input name="pizzaSauce" value="Garlic" checked={formValues.pizzaSauce==="Garlic"} type="radio" onChange={onChange} />
                 </label>
           
 
@@ -70,7 +89,8 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
             </form>
             <OrderSection>
                 {orders.map(function(orderItem){
-                        return <p>1 {orderItem.pizzaSize}</p>
+                        return <p>Your Order <br />
+                        1 {orderItem.pizzaSize} Pizza with {orderItem.pizzaSauce} Sauce</p>
                 })}
             </OrderSection>
         </PizzaOrder>
