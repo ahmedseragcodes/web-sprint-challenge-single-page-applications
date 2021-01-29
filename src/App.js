@@ -67,7 +67,9 @@ const initialDisabled=true;
         <Link to="/">Home</Link>
         <Link to="/pizza">Order Pizza</Link>
         </ul>
+        <Route path="/pizza">
           <OrderForm formValues={formValues} setFormValues={setFormValues} formErrors={formErrors} setFormErrors={setFormErrors} orders={orders} setOrders={setOrders} disabled={disabled} setDisabled={setDisabled} onSubmit={onSubmit} />
+          </Route>
       <img src="https://globalnews.ca/wp-content/uploads/2014/01/nybz106-427_2007_151036_high.jpg?strip=all&resize=696,488" alt="pizza" />
       </HomeHeading>
     </div>

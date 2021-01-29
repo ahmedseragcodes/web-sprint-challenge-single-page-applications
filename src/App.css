@@ -10,8 +10,8 @@ a, link {
   text-decoration: none;
 }
 .homepage {
-  background-color: #ec4646;
   color: white;
+  height: 100%;
 }
 .logo {
   width: 10rem;
