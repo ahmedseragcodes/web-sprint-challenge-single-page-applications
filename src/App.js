@@ -13,11 +13,11 @@ const App = () => {
 const initialFormValues={
   pizzaSize: "",
   pizzaSauce: "",
-  toppingsPep: false,
-  toppingsExtraCheese: false,
-  toppingsOlives: false,
-  toppingsOnions: false,
-  pizzaInstructions: ""
+  toppingsPep: "",
+  toppingsExtraCheese: "",
+  toppingsOlives: "",
+  toppingsOnions: "",
+  pizzaInstructions: "",
 }
 
 const initialFormErrors={
@@ -27,7 +27,7 @@ const initialFormErrors={
   toppingsExtraCheese: "",
   toppingsOlives: "",
   toppingsOnions: "",
-  pizzaInstructions: ""
+  pizzaInstructions: "",
 }
 
 const initialOrders=[];
@@ -65,12 +65,11 @@ const initialDisabled=true;
       <img className="logo" src="https://www.thedailymeal.com/sites/default/files/story/2017/pizza-roll.JPG" alt="pizza" />
       <ul>
         <Link to="/">Home</Link>
-        <Link to="/pizza">Order Pizza
+        <Link to="/pizza">Order Pizza</Link>
+        </ul>
         <Route exact path="/pizza">
           <OrderForm formValues={formValues} setFormValues={setFormValues} formErrors={formErrors} setFormErrors={setFormErrors} orders={orders} setOrders={setOrders} disabled={disabled} setDisabled={setDisabled} onSubmit={onSubmit} />
         </Route>
-        </Link>
-      </ul>
       <img src="https://globalnews.ca/wp-content/uploads/2014/01/nybz106-427_2007_151036_high.jpg?strip=all&resize=696,488" alt="pizza" />
       </HomeHeading>
     </div>
