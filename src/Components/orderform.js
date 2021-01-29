@@ -32,11 +32,11 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
                 </label>
 
             
-                <label htmlFor="originalSauce">Original Sauce 
-                    <input name="originalSauce" value="original" checked={formValues.pizzaSauce==="original"} type="radio" onChange={onChange} /> 
+                <label htmlFor="pizzaSauce">Original Sauce 
+                    <input name="pizzaSauce" value="a" checked={formValues.pizzaSauce==="a"} type="radio" onChange={onChange} /> 
                 </label>
-                <label htmlFor="garlicSauce">Garlic Sauce 
-                    <input name="garlicSauce" value="garlic" checked={formValues.pizzaSauce==="garlic"} type="radio" onChange={onChange} />
+                <label htmlFor="pizzaSauce">Garlic Sauce 
+                    <input name="pizzaSauce" value="b" checked={formValues.pizzaSauce==="b"} type="radio" onChange={onChange} />
                 </label>
           
 
