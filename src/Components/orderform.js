@@ -85,7 +85,7 @@ const { formValues, setFormValues, formErrors, setFormErrors, orders, setOrders,
                     <input type="text" name="pizzaInstructions" value={formValues.pizzaInstructions} onChange={onChange} />
                 </label>
 
-                <button disabled={disabled}>Submit Order</button>
+                <button className="submitBtn" disabled={disabled}>Submit Order</button>
             </form>
             <OrderSection>
                 {orders.map(function(orderItem){
